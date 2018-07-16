@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAppTables extends Migration
+class CreateVehiclearticleTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateAppTables extends Migration
     public function up()
     {
         Schema::create('VEHICLE_ARTICLE', function(Blueprint $table) {
-            $table->string('ID_ARTICLE', 10);
+            $table->string('ID_Vehicle_ARTICLE', 10);
             $table->string('TITLE', 255);
             $table->string('DESCRIPTION', 2000);
             $table->integer('QUANTITY')->default(1);

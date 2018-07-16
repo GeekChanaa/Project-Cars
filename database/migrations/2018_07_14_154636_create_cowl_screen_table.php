@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAppTables extends Migration
+class CreateCowlscreenTable extends Migration
 {
     /**
      * Run the migrations.
