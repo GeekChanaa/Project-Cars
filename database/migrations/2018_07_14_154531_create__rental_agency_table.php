@@ -8,7 +8,7 @@ class CreateRentalagencyTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * choukri
      * @return void
      */
     public function up()
