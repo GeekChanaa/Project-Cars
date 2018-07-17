@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Vehicle Website</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -79,15 +79,21 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Homepage
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{ url('/compare2cars') }}">Compare 2 cars</a>
+                    <a href="">Search for a vehicle to rent</a>
+                    <a href="">Search for a carwash near you</a>
+                    <a href="">WikiCar</a>
+                    @if (auth()->check())
+                     <a href="{{ url('UserInterface') }} "> User interface </a>
+                    
+                    @endif
+                    <a href="{{ url('/Market') }}">Market</a>
+                    <a href="">Forum</a>
+                    <a href="https://github.com/GeekChanaa/Project-Cars">Our github Page</a>
                 </div>
             </div>
         </div>
