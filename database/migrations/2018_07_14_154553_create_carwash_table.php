@@ -14,12 +14,10 @@ class CreateCarwashTable extends Migration
     public function up()
     {
         Schema::create('CARWASH', function(Blueprint $table) {
-            $table->string('ID_CARWASH', 10);
             $table->string('ADDRESS', 80);
             $table->string('NUM_TEL', 20);
             $table->string('OWNERID', 10);
             
-            $table->primary('ID_CARWASH');
         
             $table->timestamps();
         

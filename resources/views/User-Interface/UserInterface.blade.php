@@ -19,7 +19,7 @@
 <!-- the ability of registiring his washing-car shop -->
 
 
-<strong><a href=" {{ url('/RegisterCarWash') }} "> Register a CarWash </strong><br>
+<strong><a href=" {{ url('/RegisterCarWash/create') }} "> Register a CarWash </strong><br>
 
 
 <!-- the ability of registiring his parts shop -->

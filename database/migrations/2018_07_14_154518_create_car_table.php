@@ -14,10 +14,7 @@ class CreateCarTable extends Migration
     public function up()
     {
         Schema::create('CAR', function(Blueprint $table) {
-            $table->string('ID_CAR', 10);
             $table->string('CAR_CATEGORY', 50);
-            
-            $table->primary('ID_CAR');
         
             $table->timestamps();
         

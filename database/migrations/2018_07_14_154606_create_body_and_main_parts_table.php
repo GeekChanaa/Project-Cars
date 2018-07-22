@@ -14,7 +14,6 @@ class CreateBodyAndMainPartsTable extends Migration
     public function up()
     {
         Schema::create('BODY_AND_MAIN_PARTS', function(Blueprint $table) {
-            $table->string('ID_BODYMAINPART', 10);
             $table->string('TYPE', 20);
         
             $table->timestamps();

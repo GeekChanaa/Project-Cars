@@ -14,9 +14,8 @@ class CreatecarPartsTable extends Migration
     public function up()
     {
         Schema::create('CAR_PARTS', function(Blueprint $table) {
-            $table->string('ID_CARPART', 10);
             $table->string('CATEGORY', 80);
-        
+            $table->increments('id');
             $table->timestamps();
         
         });

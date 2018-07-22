@@ -14,7 +14,6 @@ class CreatebrandTable extends Migration
     public function up()
     {
         Schema::create('BRAND', function(Blueprint $table) {
-            $table->string('ID_BRAND', 10);
             $table->string('BRAND_NAME', 255);
             $table->string('BRAND_DESCRIPTION', 2000);
             $table->binary('BRAND_LOGO');
@@ -24,8 +23,6 @@ class CreatebrandTable extends Migration
             $table->string('FOUNER', 255);
             $table->integer('NUMBER_EMPLOYEES');
             $table->string('BRAND_PRODUCTS', 255);
-            
-            $table->primary('ID_BRAND');
         
             $table->timestamps();
         

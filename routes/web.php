@@ -119,9 +119,14 @@ Route::get('/OwnedCars',function(){
 Route::get('/RegisterRentingAgency',function(){
 	return view('User-Interface.Register-Renting-Agency.Register');
 });
-Route::get('/RegisterCarWash',function(){
-	return view('User-Interface.Register-carwash.Register');
-});
+
+/* Register the carwash */
+
+Route::get('/RegisterCarWash/create','CarwashController@create');
+
+/* Save the data in the mysql server */
+
+Route::post('/RegisterCarWash','CarwashController@store');
 
 Route::get('/UserInterface',function() {
 	return view('User-Interface.UserInterface');

@@ -14,7 +14,6 @@ class CreateVersionTable extends Migration
     public function up()
     {
         Schema::create('VERSION', function(Blueprint $table) {
-            $table->string('ID_VERSION', 10);
             $table->binary('VERSION_PICTURE');
             $table->string('TYPE', 255);
             $table->string('VERSION_NAME', 255);
@@ -45,7 +44,6 @@ class CreateVersionTable extends Migration
             $table->string('DRIVE_WHEEL', 20);
             $table->integer('NUMBER_GEARS');
             
-            $table->primary('ID_VERSION');
         
             $table->timestamps();
         

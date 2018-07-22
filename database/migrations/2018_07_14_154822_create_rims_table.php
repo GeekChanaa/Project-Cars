@@ -14,14 +14,12 @@ class CreateRimsTable extends Migration
     public function up()
     {
         Schema::create('RIMS', function(Blueprint $table) {
-            $table->string('ID_RIMS', 10);
             $table->string('BRAND', 255);
             $table->string('MODEL', 255);
             $table->binary('COMPATIBLE_CARS');
             $table->date('BEGIN_YEAR_OF_PRODUCTION');
             $table->date('END_YEAR_OF_PRODUCTION');
             
-            $table->primary('ID_RIMS');
         
             $table->timestamps();
         
