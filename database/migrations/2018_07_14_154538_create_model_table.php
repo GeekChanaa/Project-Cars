@@ -14,12 +14,14 @@ class CreatemodelTable extends Migration
     public function up()
     {
         Schema::create('MODEL', function(Blueprint $table) {
-            $table->date('MODEL_YEAR');
-            $table->string('MODEL_NAME', 255);
-            $table->binary('MODEL_LOGO');
-            $table->binary('MODEL_PICTURE');
-            
-        
+            $table->increments('id');
+            $table->unsignedinteger('brandid');
+            $table->date('model_year');
+            $table->string('model_name', 255);
+            $table->binary('model_logo');
+            $table->binary('model_picture');
+
+            $table->foreign('brandid')->references('id')->on('brand');
             $table->timestamps();
         
         });

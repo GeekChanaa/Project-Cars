@@ -20,10 +20,10 @@ class CreateUniversalJointTable extends Migration
             $table->binary('COMPATIBLE_CARS');
             $table->date('BEGIN_YEAR_OF_PRODUCTION');
             $table->date('END_YEAR_OF_PRODUCTION');
-            $table->integer('EEID',10);
-            $table->integer('AUTOPARTID',10);
+            $table->unsignedinteger('PCID');
+            $table->unsignedInteger('AUTOPARTID');
             
-            $table->foreign('EEID')->references('id')->on('ELECTRICAL_ELECTRONICS');
+            $table->foreign('PCID')->references('id')->on('POWERTRAIN_CHASSIS');
             $table->foreign('AUTOPARTID')->references('id')->on('CAR_PARTS');
             $table->timestamps();
         });

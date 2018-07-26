@@ -57,9 +57,7 @@ Route::get('/PartsMarket',function(){
 
 */
 
-Route::get('/VehicleMarket', function() {
-	return view('Market.VehicleMarket.Search_Vehicle_View');
-});
+Route::get('/VehicleMarket', 'MarketController@SearchVehicle');
 
 /* Comments : 
 
@@ -113,9 +111,16 @@ Route::get('/MarketTruckSearch',function() {
 Route::get('/favoriteVehicles',function(){
 	return view('User-Interface.Favorite-Cars.FavoriteCars');
 });
+
+
+
+
 Route::get('/OwnedCars',function(){
 	return view('User-Interface.Owned-cars.OwnedCars');
 });
+
+
+
 Route::get('/RegisterRentingAgency',function(){
 	return view('User-Interface.Register-Renting-Agency.Register');
 });
@@ -127,6 +132,15 @@ Route::get('/RegisterCarWash/create','CarwashController@create');
 /* Save the data in the mysql server */
 
 Route::post('/RegisterCarWash','CarwashController@store');
+
+
+
+Route::get('/postVehicleArticle/create','PostVehicleController@create');
+
+
+Route::post('/postVehicleArticle','PostVehicleController@store');
+
+
 
 Route::get('/UserInterface',function() {
 	return view('User-Interface.UserInterface');

@@ -13,9 +13,9 @@ class CreateCaravanTable extends Migration
      */
     public function up()
     {
-        Schema::create('CARAVAN', function(Blueprint $table) {
-            $table->string('CARAVAN_CATEGORY', 50);
-            
+        Schema::create('caravan', function(Blueprint $table) {
+            $table->string('caravan_category', 50);
+            $table->increments('id');
 
         
             $table->timestamps();

@@ -22,6 +22,10 @@
 <strong><a href=" {{ url('/RegisterCarWash/create') }} "> Register a CarWash </strong><br>
 
 
-<!-- the ability of registiring his parts shop -->
+<!-- the ability of registiring his parts shop (to think about a good idea wisely) -->
 
+
+
+
+<strong><a href=" {{ url('/postVehicleArticle/create')}} "> Post a vehicle article </strong>
 

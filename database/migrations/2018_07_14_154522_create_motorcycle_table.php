@@ -13,9 +13,9 @@ class CreateMotorcycleTable extends Migration
      */
     public function up()
     {
-        Schema::create('MOTORCYCLE', function(Blueprint $table) {
-            $table->string('MOTORCYCLE_CATEGORY', 50);
-        
+        Schema::create('motorcycle', function(Blueprint $table) {
+            $table->string('motorcycle_category', 50);
+            $table->increments('id');
             $table->timestamps();
         
         });

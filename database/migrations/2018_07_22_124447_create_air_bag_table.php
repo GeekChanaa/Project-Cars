@@ -19,11 +19,11 @@ class CreateAirBagTable extends Migration
             $table->binary('COMPATIBLE_CARS');
             $table->date('BEGIN_YEAR_OF_PRODUCTION');
             $table->date('END_YEAR_OF_PRODUCTION');
-            $table->int('MAUPID',10);
-            $table->int('AUTOPARTID',10);
+            $table->unsignedinteger('MAUPID');
+            $table->unsignedinteger('AUTOPARTID');
             
-            $table->foreign('MAUPID')->references('miscellaneous_auto_parts')->on('MAUPID');
-            $table->foreign('AUTOPARTID')->references('car_parts')->on('AUTOPARTID');
+            $table->foreign('MAUPID')->references('id')->on('miscellaneous_auto_parts');
+            $table->foreign('AUTOPARTID')->references('id')->on('car_parts');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDistributorCapTable extends Migration
+class CreateIntakeManifoldTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class CreateDistributorCapTable extends Migration
      */
     public function up()
     {
-        Schema::create('Distributor_Cap', function (Blueprint $table) {
+        Schema::create('Intake_manifold', function (Blueprint $table) {
             $table->increments('id');
             $table->string('BRAND', 255);
             $table->string('MODEL', 255);
             $table->binary('COMPATIBLE_CARS');
             $table->date('BEGIN_YEAR_OF_PRODUCTION');
             $table->date('END_YEAR_OF_PRODUCTION');
-            $table->integer('EEID',10);
-            $table->integer('AUTOPARTID',10);
+            $table->unsignedinteger('PCID');
+            $table->unsignedInteger('AUTOPARTID');
             
-            $table->foreign('EEID')->references('id')->on('ELECTRICAL_ELECTRONICS');
+            $table->foreign('PCID')->references('id')->on('POWERTRAIN_CHASSIS');
             $table->foreign('AUTOPARTID')->references('id')->on('CAR_PARTS');
             $table->timestamps();
         });
@@ -36,6 +36,6 @@ class CreateDistributorCapTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Distributor_Cap');
+        Schema::dropIfExists('Intake_manifold');
     }
 }

@@ -13,11 +13,11 @@ class CreateEventTable extends Migration
      */
     public function up()
     {
-        Schema::create('EVENT', function(Blueprint $table) {
-            $table->date('EVENT_DATE');
-            $table->string('DESCRIPTION', 2000);
-            $table->string('ADDRESS', 80);
-            
+        schema::create('event', function(Blueprint $table) {
+            $table->date('event_date');
+            $table->string('description', 2000);
+            $table->string('address', 80);
+            $table->increments('id');
         
             $table->timestamps();
         

@@ -15,16 +15,16 @@ class CreatePartsFunctionsStarterSystemTable extends Migration
     {
         Schema::create('Parts_functions_starter_system', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('BRAND', 255);
-            $table->string('MODEL', 255);
-            $table->binary('COMPATIBLE_CARS');
-            $table->date('BEGIN_YEAR_OF_PRODUCTION');
-            $table->date('END_YEAR_OF_PRODUCTION');
-            $table->integer('EEID',10);
-            $table->integer('AUTOPARTID',10);
+            $table->string('brand', 255);
+            $table->string('model', 255);
+            $table->binary('compatible_cars');
+            $table->date('begin_year_of_production');
+            $table->date('end_year_of_production');
+            $table->unsignedinteger('eeid');
+            $table->unsignedinteger('autopartid');
             
-            $table->foreign('EEID')->references('id')->on('ELECTRICAL_ELECTRONICS');
-            $table->foreign('AUTOPARTID')->references('id')->on('CAR_PARTS');
+            $table->foreign('eeid')->references('id')->on('electrical_electronics');
+            $table->foreign('autopartid')->references('id')->on('car_parts');
             $table->timestamps();
         });
     }

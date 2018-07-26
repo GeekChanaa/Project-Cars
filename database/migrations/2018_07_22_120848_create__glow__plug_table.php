@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGlowPlugTable extends Migration
+class CreateGlow_PlugTable extends Migration
 {
     /**
      * Run the migrations.
@@ -20,8 +20,8 @@ class CreateGlowPlugTable extends Migration
             $table->binary('COMPATIBLE_CARS');
             $table->date('BEGIN_YEAR_OF_PRODUCTION');
             $table->date('END_YEAR_OF_PRODUCTION');
-            $table->integer('EEID',10);
-            $table->integer('AUTOPARTID',10);
+            $table->unsignedInteger('EEID');
+            $table->unsignedInteger('AUTOPARTID');
             
             $table->foreign('EEID')->references('id')->on('ELECTRICAL_ELECTRONICS');
             $table->foreign('AUTOPARTID')->references('id')->on('CAR_PARTS');

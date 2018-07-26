@@ -14,12 +14,13 @@ class CreateVehiclearticleTable extends Migration
     public function up()
     {
         Schema::create('VEHICLE_ARTICLE', function(Blueprint $table) {
-            $table->string('TITLE', 255);
-            $table->string('DESCRIPTION', 2000);
-            $table->integer('QUANTITY')->default(1);
-            $table->string('USERID', 10);
+            $table->string('title', 255);
+            $table->string('description', 2000);
+            $table->integer('quantity')->default(1);
+            $table->unsignedinteger('userid');
+            $table->increments('id');
             
-            $table->foreign('USERID')->references('id')->on('users');
+            $table->foreign('userid')->references('id')->on('users');
             $table->timestamps();
         
         });

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAcLowPressureValveTable extends Migration
+class CreateSpeedControllerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,18 @@ class CreateAcLowPressureValveTable extends Migration
      */
     public function up()
     {
-        Schema::create('ac_low-pressure_valve', function (Blueprint $table) {
-            $table->increments('id');$table->string('BRAND', 255);
+        Schema::create('speed_controller', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('BRAND', 255);
             $table->string('MODEL', 255);
             $table->binary('COMPATIBLE_CARS');
             $table->date('BEGIN_YEAR_OF_PRODUCTION');
             $table->date('END_YEAR_OF_PRODUCTION');
-            $table->int('MAUPID',10);
-            $table->int('AUTOPARTID',10);
+            $table->unsignedInteger('EEID');
+            $table->unsignedInteger('AUTOPARTID');
             
-            $table->foreign('MAUPID')->references('miscellaneous_auto_parts')->on('MAUPID');
-            $table->foreign('AUTOPARTID')->references('car_parts')->on('AUTOPARTID');
+            $table->foreign('EEID')->references('id')->on('ELECTRICAL_ELECTRONICS');
+            $table->foreign('AUTOPARTID')->references('id')->on('CAR_PARTS');
             $table->timestamps();
         });
     }
@@ -35,6 +36,6 @@ class CreateAcLowPressureValveTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ac_low-pressure_valve');
+        Schema::dropIfExists('Ignition_coil_parts');
     }
 }

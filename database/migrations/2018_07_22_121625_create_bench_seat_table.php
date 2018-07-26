@@ -15,7 +15,18 @@ class CreateBenchSeatTable extends Migration
     {
         Schema::create('bench_seat', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('BRAND', 255);
+            $table->string('MODEL', 255);
+            $table->binary('COMPATIBLE_CARS');
+            $table->date('BEGIN_YEAR_OF_PRODUCTION');
+            $table->date('END_YEAR_OF_PRODUCTION');
+            $table->unsignedinteger('InteriorID');
+            $table->unsignedInteger('AUTOPARTID');
+            
+            $table->foreign('InteriorID')->references('id')->on('Interior');
+            $table->foreign('AUTOPARTID')->references('id')->on('CAR_PARTS');
             $table->timestamps();
+
         });
     }
 

@@ -15,6 +15,7 @@ class CreateWorkshopTable extends Migration
     {
         Schema::create('workshop', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('address', 80);
             $table->timestamps();
         });
     }

@@ -2,13 +2,24 @@
 
 @section('content')
 
+
 <!-- A very general Vehicle search -->
 
-	<!-- Pagination: chooses the category : car - caravan - motorcycle - truck -->
+	<!-- little onglets: chooses the category : car - caravan - motorcycle - truck -->
 
 <form>
+
+	{{ csrf_field() }}
+
 <h1>Car</h1>
-	Brand: <input type="text"><br>
+	Brand:
+		<s> ok </s>
+			@foreach ($brands as $brand)
+				<s> ok</s>
+				{{ $brand->BRAND_NAME }}
+				<s>  </s>
+			@endforeach
+<s> ok 3 </s>
 	<!-- After choosing Brand this will be activated -->
 		Model : <input type="text"> <br>
 	<strong> <a href="{{ url('MarketCarSearch') }}"> more specific search </a> </strong>

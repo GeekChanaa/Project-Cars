@@ -13,12 +13,13 @@ class CreatepowertrainchassisTable extends Migration
      */
     public function up()
     {
-        Schema::create('POWERTRAIN_CHASSIS', function(Blueprint $table) {
-            $table->string('BRAND', 255);
-            $table->string('MODEL', 255);
-            $table->binary('COMPATIBLE_CARS');
-            $table->date('BEGIN_YEAR_OF_PRODUCTION');
-            $table->date('END_YEAR_OF_PRODUCTION');
+        Schema::create('powertrain_chassis', function(Blueprint $table) {
+            $table->increments('id');
+            $table->string('brand', 255);
+            $table->string('model', 255);
+            $table->binary('compatible_cars');
+            $table->date('begin_year_of_production');
+            $table->date('end_year_of_production');
             
         
             $table->timestamps();
@@ -35,7 +36,7 @@ class CreatepowertrainchassisTable extends Migration
      */
     public function down()
     {
-        Schema::drop('POWERTRAIN_CHASSIS');
+        Schema::drop('powertrain_chassis');
 
     }
 }   

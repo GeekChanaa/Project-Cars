@@ -13,9 +13,9 @@ class CreateCarTable extends Migration
      */
     public function up()
     {
-        Schema::create('CAR', function(Blueprint $table) {
-            $table->string('CAR_CATEGORY', 50);
-        
+        Schema::create('car', function(Blueprint $table) {
+            $table->string('car_category', 50);
+            $table->increments('id');
             $table->timestamps();
         
         });

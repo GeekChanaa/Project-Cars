@@ -13,14 +13,15 @@ class CreateRentalagencyTable extends Migration
      */
     public function up()
     {
-        Schema::create('RENTAL_AGENCY', function(Blueprint $table) {
-            $table->string('ADDRESS', 80);
-            $table->string('NAME', 255);
-            $table->string('CITY', 255);
-            $table->string('VEHICLE_NUMBER', 255);
-            $table->string('OWNERID', 10);
+        Schema::create('rental_agency', function(Blueprint $table) {
+            $table->string('address', 80);
+            $table->string('name', 255);
+            $table->string('city', 255);
+            $table->string('vehicle_number', 255);
+            $table->unsignedinteger('ownerid');
+            $table->increments('id');
             
-        
+            $table->foreign('ownerid')->references('id')->on('users');
             $table->timestamps();
         
         });

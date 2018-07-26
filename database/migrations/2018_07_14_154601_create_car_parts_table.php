@@ -13,8 +13,8 @@ class CreatecarPartsTable extends Migration
      */
     public function up()
     {
-        Schema::create('CAR_PARTS', function(Blueprint $table) {
-            $table->string('CATEGORY', 80);
+        Schema::create('car_parts', function(Blueprint $table) {
+            $table->string('category', 80);
             $table->increments('id');
             $table->timestamps();
         

@@ -14,35 +14,36 @@ class CreateVersionTable extends Migration
     public function up()
     {
         Schema::create('VERSION', function(Blueprint $table) {
-            $table->binary('VERSION_PICTURE');
-            $table->string('TYPE', 255);
-            $table->string('VERSION_NAME', 255);
-            $table->string('VERSION_ENGINE', 255);
-            $table->integer('DOORS_COUNT');
-            $table->FLOAT('POWER');
-            $table->FLOAT('ACCELERATION');
-            $table->FLOAT('MAX_SPEED');
-            $table->integer('SEATS_COUNT');
-            $table->FLOAT('LENGTH');
-            $table->FLOAT('WIDTH');
-            $table->FLOAT('HEIGHT');
-            $table->FLOAT('VOLUME');
-            $table->FLOAT('FUEL_CONSUMPTION');
-            $table->FLOAT('CO2_EMISSIONS');
-            $table->FLOAT('MAX_WEIGHT');
-            $table->string('TIRE_SIZE', 80);
-            $table->string('WHEEL_RIMS_SIZE', 80);
-            $table->FLOAT('ENGINE_OIL_CAPACITY');
-            $table->string('TURBINE', 80);
-            $table->string('POSITION_OF_ENGINE', 20);
-            $table->date('BEGIN_YEAR_OF_PRODUCTION');
-            $table->date('END_YEAR_OF_PRODUCTION');
-            $table->string('POSITION_OF_CYCLINDERS', 80);
-            $table->integer('NUMBER_OF_CYLINDERS');
-            $table->FLOAT('COOLANT');
-            $table->string('FUEL_TYPE', 20);
-            $table->string('DRIVE_WHEEL', 20);
-            $table->integer('NUMBER_GEARS');
+            $table->binary('version_picture');
+            $table->string('type', 255);
+            $table->string('version_name', 255);
+            $table->string('version_engine', 255);
+            $table->integer('doors_count');
+            $table->float('power');
+            $table->float('acceleration');
+            $table->float('max_speed');
+            $table->integer('seats_count');
+            $table->float('length');
+            $table->float('width');
+            $table->float('height');
+            $table->float('volume');
+            $table->float('fuel_consumption');
+            $table->float('co2_emissions');
+            $table->float('max_weight');
+            $table->string('tire_size', 80);
+            $table->string('wheel_rims_size', 80);
+            $table->float('engine_oil_capacity');
+            $table->string('turbine', 80);
+            $table->string('position_of_engine', 20);
+            $table->date('begin_year_of_production');
+            $table->date('end_year_of_production');
+            $table->string('position_of_cyclinders', 80);
+            $table->integer('number_of_cylinders');
+            $table->float('coolant');
+            $table->string('fuel_type', 20);
+            $table->string('drive_wheel', 20);
+            $table->integer('number_gears');
+            $table->increments('id');
             
         
             $table->timestamps();

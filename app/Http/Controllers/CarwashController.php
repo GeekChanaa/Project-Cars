@@ -7,9 +7,12 @@ use Illuminate\Http\Request;
 
 class CarwashController extends Controller
 {
+	// send the user to the register carwash form
 	public function create(){
 		return view('User-Interface.Register-carwash.Register');
 	}
+
+	// stores the carwash in the database
 	public function store(Request $request)
 	{
 	$carwas = new carwash;
@@ -18,7 +21,6 @@ class CarwashController extends Controller
 	$carwas->NUM_Tel='ok bb';
 	$carwas->ownerid='1';
 	$carwas->save();
-
 	return redirect('/');
 }
 	

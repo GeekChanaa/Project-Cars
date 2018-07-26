@@ -20,9 +20,8 @@ class CreateAlternatorTable extends Migration
             $table->binary('COMPATIBLE_CARS');
             $table->date('BEGIN_YEAR_OF_PRODUCTION');
             $table->date('END_YEAR_OF_PRODUCTION');
-            $table->integer('EEID',10);
-            $table->integer('AUTOPARTID',10);
-            
+            $table->unsignedinteger('EEID');
+            $table->unsignedinteger('AUTOPARTID');
             $table->foreign('EEID')->references('id')->on('ELECTRICAL_ELECTRONICS');
             $table->foreign('AUTOPARTID')->references('id')->on('CAR_PARTS');
             $table->timestamps();
